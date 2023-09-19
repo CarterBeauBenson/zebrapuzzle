@@ -179,7 +179,7 @@
 
 <SubClassOf>
     <Class IRI="#House"/>
-    <ObjectExactCardinality cardinality="1" ObjectProperty IRI="#hasColor"/>
+    <ObjectExactCardinality cardinality="1" ObjectProperty="IRI" IRI="#hasColor"/>
 </SubClassOf>
 <SubClassOf>
     <Class IRI="#House"/>
