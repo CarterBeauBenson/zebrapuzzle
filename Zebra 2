@@ -174,7 +174,6 @@
     <NamedIndividual IRI="#BlueHouse"/>
 </ClassAssertion>
 
-<!-- Each house has exactly one color, nationality, drink, cigarette, and pet -->
 <SubClassOf>
     <Class IRI="#House"/>
     <ObjectExactCardinality cardinality="1" ObjectProperty IRI="#hasColor"/>
@@ -254,7 +253,6 @@
     <NamedIndividual IRI="#House2"/>
     <NamedIndividual IRI="#House3"/>
 </ObjectPropertyAssertion>
-<!-- ... Similarly, continue to assert neighboring houses for Houses 3 to 5 -->
 
 <ClassAssertion>
     <ObjectComplementOf>
@@ -274,5 +272,21 @@
     </ObjectComplementOf>
     <NamedIndividual IRI="#House5"/>
 </ClassAssertion>
+
+<Declaration><ObjectProperty IRI="#isImmediatelyRightOf"/></Declaration>
+<Declaration><ObjectProperty IRI="#isNextTo"/></Declaration>
+<Declaration><ObjectProperty IRI="#hasNationality"/></Declaration>
+<Declaration><ObjectProperty IRI="#hasLeftNeighbor"/></Declaration>
+<Declaration><ObjectProperty IRI="#hasRightNeighbor"/></Declaration>
+
+<ClassAssertion>
+    <Class IRI="#Red"/>
+    <NamedIndividual IRI="#House1"/>
+</ClassAssertion>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#hasNationality"/>
+    <NamedIndividual IRI="#House1"/>
+    <NamedIndividual IRI="#Englishman"/>
+</ObjectPropertyAssertion>
 
 </Ontology>
