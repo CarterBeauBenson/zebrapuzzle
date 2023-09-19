@@ -1,0 +1,278 @@
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+          xml:base="http://example.org/zebrapuzzle"
+          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+          ontologyIRI="http://example.org/zebrapuzzle">
+
+    <Declaration>
+        <Class IRI="#House"/>
+    </Declaration>
+    
+    <Declaration>
+        <ObjectProperty IRI="#livesIn"/>
+    </Declaration>
+<Declaration><NamedIndividual IRI="#House1"/></Declaration>
+<Declaration><NamedIndividual IRI="#House2"/></Declaration>
+<Declaration><NamedIndividual IRI="#House3"/></Declaration>
+<Declaration><NamedIndividual IRI="#House4"/></Declaration>
+<Declaration><NamedIndividual IRI="#House5"/></Declaration>
+<Declaration><Class IRI="#Englishman"/></Declaration>
+<Declaration><Class IRI="#Spaniard"/></Declaration>
+<Declaration><Class IRI="#Ukrainian"/></Declaration>
+<Declaration><Class IRI="#Norwegian"/></Declaration>
+<Declaration><Class IRI="#Japanese"/></Declaration>
+<Declaration><Class IRI="#Red"/></Declaration>
+<Declaration><Class IRI="#Green"/></Declaration>
+<Declaration><Class IRI="#Ivory"/></Declaration>
+<Declaration><Class IRI="#Yellow"/></Declaration>
+<Declaration><Class IRI="#Blue"/></Declaration>
+<Declaration><Class IRI="#Coffee"/></Declaration>
+<Declaration><Class IRI="#Tea"/></Declaration>
+<Declaration><Class IRI="#Milk"/></Declaration>
+<Declaration><Class IRI="#OrangeJuice"/></Declaration>
+<Declaration><Class IRI="#Water"/></Declaration>
+<Declaration><Class IRI="#OldGold"/></Declaration>
+<Declaration><Class IRI="#Kools"/></Declaration>
+<Declaration><Class IRI="#Chesterfields"/></Declaration>
+<Declaration><Class IRI="#LuckyStrike"/></Declaration>
+<Declaration><Class IRI="#Parliaments"/></Declaration>
+<Declaration><Class IRI="#Dog"/></Declaration>
+<Declaration><Class IRI="#Snails"/></Declaration>
+<Declaration><Class IRI="#Fox"/></Declaration>
+<Declaration><Class IRI="#Horse"/></Declaration>
+<Declaration><Class IRI="#Zebra"/></Declaration>
+<Declaration><ObjectProperty IRI="#hasColor"/></Declaration>
+<Declaration><ObjectProperty IRI="#drinks"/></Declaration>
+<Declaration><ObjectProperty IRI="#smokes"/></Declaration>
+<Declaration><ObjectProperty IRI="#ownsPet"/></Declaration>
+<!-- 1. The Englishman lives in the red house. -->
+<ClassAssertion>
+    <Class IRI="#Red"/>
+    <NamedIndividual IRI="#House1"/> <!-- We'll temporarily assume this, will adjust later based on other clues -->
+</ClassAssertion>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#livesIn"/>
+    <NamedIndividual IRI="#Englishman"/>
+    <NamedIndividual IRI="#House1"/>
+</ObjectPropertyAssertion>
+
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#ownsPet"/>
+    <NamedIndividual IRI="#Spaniard"/>
+    <NamedIndividual IRI="#Dog"/>
+</ObjectPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Green"/>
+    <NamedIndividual IRI="#House2"/> <!-- Temporarily assume this -->
+</ClassAssertion>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#drinks"/>
+    <NamedIndividual IRI="#House2"/>
+    <NamedIndividual IRI="#Coffee"/>
+</ObjectPropertyAssertion>
+
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#drinks"/>
+    <NamedIndividual IRI="#Ukrainian"/>
+    <NamedIndividual IRI="#Tea"/>
+</ObjectPropertyAssertion>
+
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#isImmediatelyRightOf"/>
+    <NamedIndividual IRI="#Green"/>
+    <NamedIndividual IRI="#Ivory"/>
+</ObjectPropertyAssertion>
+
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#smokes"/>
+    <NamedIndividual IRI="#OldGold"/>
+    <NamedIndividual IRI="#Snails"/>
+</ObjectPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Yellow"/>
+    <NamedIndividual IRI="#House3"/> <!-- Temporarily assuming this -->
+</ClassAssertion>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#smokes"/>
+    <NamedIndividual IRI="#House3"/>
+    <NamedIndividual IRI="#Kools"/>
+</ObjectPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Milk"/>
+    <NamedIndividual IRI="#House3"/> <!-- Middle house, as per the clue -->
+</ClassAssertion>
+
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#livesIn"/>
+    <NamedIndividual IRI="#Norwegian"/>
+    <NamedIndividual IRI="#House1"/>
+</ObjectPropertyAssertion>
+
+<SubClassOf>
+    <Class IRI="#ChesterfieldSmoker"/>
+    <ObjectSomeValuesFrom>
+        <ObjectProperty IRI="#isNextTo"/>
+        <Class IRI="#FoxOwner"/>
+    </ObjectSomeValuesFrom>
+</SubClassOf>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#smokes"/>
+    <NamedIndividual IRI="#ChesterfieldSmoker"/>
+    <NamedIndividual IRI="#Chesterfields"/>
+</ObjectPropertyAssertion>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#ownsPet"/>
+    <NamedIndividual IRI="#FoxOwner"/>
+    <NamedIndividual IRI="#Fox"/>
+</ObjectPropertyAssertion>
+
+<SubClassOf>
+    <Class IRI="#KoolSmoker"/>
+    <ObjectSomeValuesFrom>
+        <ObjectProperty IRI="#isNextTo"/>
+        <Class IRI="#HorseOwner"/>
+    </ObjectSomeValuesFrom>
+</SubClassOf>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#smokes"/>
+    <NamedIndividual IRI="#KoolSmoker"/>
+    <NamedIndividual IRI="#Kools"/>
+</ObjectPropertyAssertion>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#ownsPet"/>
+    <NamedIndividual IRI="#HorseOwner"/>
+    <NamedIndividual IRI="#Horse"/>
+</ObjectPropertyAssertion>
+
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#smokes"/>
+    <NamedIndividual IRI="#Person12"/> <!-- Temporarily named individual -->
+    <NamedIndividual IRI="#LuckyStrike"/>
+</ObjectPropertyAssertion>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#drinks"/>
+    <NamedIndividual IRI="#Person12"/>
+    <NamedIndividual IRI="#OrangeJuice"/>
+</ObjectPropertyAssertion>
+
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#smokes"/>
+    <NamedIndividual IRI="#Japanese"/>
+    <NamedIndividual IRI="#Parliaments"/>
+</ObjectPropertyAssertion>
+
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#isNextTo"/>
+    <NamedIndividual IRI="#House1"/>
+    <NamedIndividual IRI="#BlueHouse"/> <!-- Assuming BlueHouse as a named individual for simplicity -->
+</ObjectPropertyAssertion>
+<ClassAssertion>
+    <Class IRI="#Blue"/>
+    <NamedIndividual IRI="#BlueHouse"/>
+</ClassAssertion>
+
+<!-- Each house has exactly one color, nationality, drink, cigarette, and pet -->
+<SubClassOf>
+    <Class IRI="#House"/>
+    <ObjectExactCardinality cardinality="1" ObjectProperty IRI="#hasColor"/>
+</SubClassOf>
+<SubClassOf>
+    <Class IRI="#House"/>
+    <ObjectExactCardinality cardinality="1" ObjectProperty IRI="#hasNationality"/>
+</SubClassOf>
+<SubClassOf>
+    <Class IRI="#House"/>
+    <ObjectExactCardinality cardinality="1" ObjectProperty IRI="#drinks"/>
+</SubClassOf>
+<SubClassOf>
+    <Class IRI="#House"/>
+    <ObjectExactCardinality cardinality="1" ObjectProperty IRI="#smokes"/>
+</SubClassOf>
+<SubClassOf>
+    <Class IRI="#House"/>
+    <ObjectExactCardinality cardinality="1" ObjectProperty IRI="#ownsPet"/>
+</SubClassOf>
+
+<DisjointClasses>
+    <Class IRI="#RedHouse"/>
+    <Class IRI="#BlueHouse"/>
+    <Class IRI="#GreenHouse"/>
+    <Class IRI="#IvoryHouse"/>
+    <Class IRI="#YellowHouse"/>
+</DisjointClasses>
+
+<DisjointClasses>
+    <Class IRI="#Englishman"/>
+    <Class IRI="#Japanese"/>
+    <Class IRI="#Norwegian"/>
+    <Class IRI="#Spaniard"/>
+    <Class IRI="#Ukrainian"/>
+</DisjointClasses>
+
+<DisjointClasses>
+    <Class IRI="#Coffee"/>
+    <Class IRI="#Tea"/>
+    <Class IRI="#Milk"/>
+    <Class IRI="#OrangeJuice"/>
+    <Class IRI="#Water"/>
+</DisjointClasses>
+
+<DisjointClasses>
+    <Class IRI="#OldGold"/>
+    <Class IRI="#Kools"/>
+    <Class IRI="#Chesterfields"/>
+    <Class IRI="#LuckyStrike"/>
+    <Class IRI="#Parliaments"/>
+</DisjointClasses>
+
+<DisjointClasses>
+    <Class IRI="#Dog"/>
+    <Class IRI="#Fox"/>
+    <Class IRI="#Horse"/>
+    <Class IRI="#Snails"/>
+    <Class IRI="#Zebra"/>
+</DisjointClasses>
+
+<SubClassOf>
+    <Class IRI="#House"/>
+    <ObjectMaxCardinality cardinality="1" ObjectProperty IRI="#hasLeftNeighbor"/>
+</SubClassOf>
+<SubClassOf>
+    <Class IRI="#House"/>
+    <ObjectMaxCardinality cardinality="1" ObjectProperty IRI="#hasRightNeighbor"/>
+</SubClassOf>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#hasRightNeighbor"/>
+    <NamedIndividual IRI="#House1"/>
+    <NamedIndividual IRI="#House2"/>
+</ObjectPropertyAssertion>
+<ObjectPropertyAssertion>
+    <ObjectProperty IRI="#hasRightNeighbor"/>
+    <NamedIndividual IRI="#House2"/>
+    <NamedIndividual IRI="#House3"/>
+</ObjectPropertyAssertion>
+<!-- ... Similarly, continue to assert neighboring houses for Houses 3 to 5 -->
+
+<ClassAssertion>
+    <ObjectComplementOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLeftNeighbor"/>
+            <Class IRI="#House"/>
+        </ObjectSomeValuesFrom>
+    </ObjectComplementOf>
+    <NamedIndividual IRI="#House1"/>
+</ClassAssertion>
+<ClassAssertion>
+    <ObjectComplementOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRightNeighbor"/>
+            <Class IRI="#House"/>
+        </ObjectSomeValuesFrom>
+    </ObjectComplementOf>
+    <NamedIndividual IRI="#House5"/>
+</ClassAssertion>
+
+
