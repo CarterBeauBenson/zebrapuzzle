@@ -2,7 +2,7 @@
           xml:base="http://example.org/zebrapuzzle"
           xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
           xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-          ontologyIRI="http://example.org/zebrapuzzle">
+
 
     <Declaration>
         <Class IRI="#House"/>
