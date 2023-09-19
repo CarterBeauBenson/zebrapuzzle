@@ -1,0 +1,58 @@
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+          xml:base="http://example.org/zebrapuzzle"
+          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+          ontologyIRI="http://example.org/zebrapuzzle">
+
+    <Declaration>
+        <Class IRI="#House"/>
+    </Declaration>
+    
+    <Declaration>
+        <ObjectProperty IRI="#livesIn"/>
+    </Declaration>
+    
+<Declaration><Class IRI="#Spaniard"/></Declaration>
+<Declaration><Class IRI="#Ukrainian"/></Declaration>
+<Declaration><Class IRI="#Norwegian"/></Declaration>
+<Declaration><Class IRI="#Japanese"/></Declaration>
+<Declaration><Class IRI="#Englishman"></Declaration>
+
+<Declaration><Class IRI="#GreenHouse"/></Declaration>
+<Declaration><Class IRI="#IvoryHouse"/></Declaration>
+<Declaration><Class IRI="#YellowHouse"/></Declaration>
+<Declaration><Class IRI="#BlueHouse"/></Declaration>
+<Declaration><Class IRI="#RedHouse"/></Declaration>
+
+<Declaration><Class IRI="#Coffee"/></Declaration>
+<Declaration><Class IRI="#Tea"/></Declaration>
+<Declaration><Class IRI="#Milk"/></Declaration>
+<Declaration><Class IRI="#OrangeJuice"/></Declaration>
+<Declaration><Class IRI="#Water"/></Declaration>
+
+<Declaration><Class IRI="#OldGold"/></Declaration>
+<Declaration><Class IRI="#Kools"/></Declaration>
+<Declaration><Class IRI="#Chesterfields"/></Declaration>
+<Declaration><Class IRI="#LuckyStrike"/></Declaration>
+<Declaration><Class IRI="#Parliaments"/></Declaration>
+
+<Declaration><Class IRI="#Snails"/></Declaration>
+<Declaration><Class IRI="#Fox"/></Declaration>
+<Declaration><Class IRI="#Horse"/></Declaration>
+<Declaration><Class IRI="#Dog"/></Declaration>
+<Declaration><Class IRI="#Zebra"/></Declaration>
+
+<!-- Defining relationships for house attributes -->
+<Declaration><ObjectProperty IRI="#hasNationality"/></Declaration>
+<Declaration><ObjectProperty IRI="#hasColor"/></Declaration>
+
+
+<Declaration><ObjectProperty IRI="#isNextTo"/></Declaration> <!-- can be used for general neighboring relation -->
+<Declaration><ObjectProperty IRI="#isImmediatelyRightOf"/></Declaration> <!-- to be more specific than isRightOf -->
+<Declaration><ObjectProperty IRI="#isImmediatelyLeftOf"/></Declaration> <!-- to be more specific than isLeftOf -->
+
+<Declaration><ObjectProperty IRI="#personSmokes"/></Declaration>
+<Declaration><ObjectProperty IRI="#personDrinks"/></Declaration>
+<Declaration><ObjectProperty IRI="#personOwnsPet"/></Declaration>
+<Declaration><ObjectProperty IRI="#hasRightNeighbor"/></Declaration>
+<Declaration><ObjectProperty IRI="#hasLeftNeighbor"/></Declaration>
