@@ -56,3 +56,5 @@
 <Declaration><ObjectProperty IRI="#personOwnsPet"/></Declaration>
 <Declaration><ObjectProperty IRI="#hasRightNeighbor"/></Declaration>
 <Declaration><ObjectProperty IRI="#hasLeftNeighbor"/></Declaration>
+
+</Ontology>
