@@ -10,7 +10,6 @@
 :Drink rdf:type owl:Class .
 :Cigar rdf:type owl:Class .
 :Pet rdf:type owl:Class .
-
 :hasNationality rdf:type owl:ObjectProperty ;
                 rdfs:domain :House ;
                 rdfs:range :Nationality .
@@ -26,48 +25,39 @@
 :keeps rdf:type owl:ObjectProperty ;
        rdfs:domain :House ;
        rdfs:range :Pet .
-
 :House1 rdf:type :House .
 :House2 rdf:type :House .
 :House3 rdf:type :House .
 :House4 rdf:type :House .
 :House5 rdf:type :House .
-
 :Englishman rdf:type :Nationality .
 :Spaniard rdf:type :Nationality .
 :Ukrainian rdf:type :Nationality .
 :Norwegian rdf:type :Nationality .
 :Japanese rdf:type :Nationality .
-
 :Red rdf:type :Color .
 :Green rdf:type :Color .
 :Ivory rdf:type :Color .
 :Yellow rdf:type :Color .
 :Blue rdf:type :Color .
-
 :Tea rdf:type :Drink .
 :Coffee rdf:type :Drink .
 :Milk rdf:type :Drink .
 :OrangeJuice rdf:type :Drink .
 :Water rdf:type :Drink .
-
 :OldGold rdf:type :Cigar .
 :Kools rdf:type :Cigar .
 :Chesterfields rdf:type :Cigar .
 :LuckyStrike rdf:type :Cigar .
 :Parliaments rdf:type :Cigar .
-
 :Dog rdf:type :Pet .
 :Snails rdf:type :Pet .
 :Fox rdf:type :Pet .
 :Horse rdf:type :Pet .
 :Zebra rdf:type :Pet .
-
 :House1 :hasNationality :Norwegian .
 :House2 :hasColor :Blue .
 :House3 :drinks :Milk .
-
-# Clues
 :House1 :hasColor :Yellow .
 :House1 :smokes :Kools .
 :House2 :keeps :Fox .
@@ -78,33 +68,27 @@
 :House4 :hasNationality :Japanese .
 :House4 :smokes :Parliaments .
 :House5 :keeps :Zebra .
-
 :House1 :keeps :Fox .
 :House2 :drinks :Water .
 :House3 :smokes :OldGold .
 :House4 :hasColor :Green .
 :House5 :hasColor :Ivory .
 :House5 :keeps :Dog .
-
-# Relationships
 :House1 :hasColor :Yellow .
 :House2 :hasColor :Blue .
 :House3 :hasColor :Red .
 :House4 :hasColor :Green .
 :House5 :hasColor :Ivory .
-
 :House1 :keeps :Horse .
 :House2 :keeps :Fox .
 :House3 :keeps :Snails .
 :House4 :keeps :Zebra .
 :House5 :keeps :Dog .
-
 :House1 :drinks :Water .
 :House2 :drinks :Tea .
 :House3 :drinks :Milk .
 :House4 :drinks :OrangeJuice .
 :House5 :drinks :Coffee .
-
 :House1 :smokes :Kools .
 :House2 :smokes :Chesterfields .
 :House3 :smokes :OldGold .
