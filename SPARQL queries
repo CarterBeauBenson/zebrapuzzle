@@ -1,0 +1,14 @@
+PREFIX : <http://www.semanticweb.org/ontologies/zebrapuzzle#>
+
+SELECT ?house ?nationality WHERE {
+  ?house :drinks :Water .
+  ?house :hasNationality ?nationality .
+}
+
+
+PREFIX : <http://www.semanticweb.org/ontologies/zebrapuzzle#>
+
+SELECT ?house ?nationality WHERE {
+  ?house :keeps :Zebra .
+  ?house :hasNationality ?nationality .
+}
