@@ -26,6 +26,12 @@
 :keeps rdf:type owl:ObjectProperty ;
        rdfs:domain :House ;
        rdfs:range :Pet .
+:rightOf rdf:type owl:ObjectProperty ;
+         rdfs:domain :House ;
+         rdfs:range :House .
+:nextTo rdf:type owl:ObjectProperty ;
+        rdfs:domain :House ;
+        rdfs:range :House .
 
 :House1 rdf:type :House .
 :House2 rdf:type :House .
@@ -63,6 +69,7 @@
 :Horse rdf:type :Pet .
 :Zebra rdf:type :Pet .
 
+# 1. The Englishman lives in the red house.
 [] rdf:type owl:Restriction ;
    owl:onProperty :hasNationality ;
    owl:someValuesFrom :Englishman ;
@@ -72,7 +79,7 @@
      owl:hasValue :Red
    ] .
 
-
+# 2. The Spaniard owns the dog.
 [] rdf:type owl:Restriction ;
    owl:onProperty :hasNationality ;
    owl:someValuesFrom :Spaniard ;
@@ -82,7 +89,7 @@
      owl:hasValue :Dog
    ] .
 
-
+# 3. Coffee is drunk in the green house.
 [] rdf:type owl:Restriction ;
    owl:onProperty :drinks ;
    owl:someValuesFrom :Coffee ;
@@ -92,7 +99,7 @@
      owl:hasValue :Green
    ] .
 
-
+# 4. The Ukrainian drinks tea.
 [] rdf:type owl:Restriction ;
    owl:onProperty :hasNationality ;
    owl:someValuesFrom :Ukrainian ;
@@ -102,18 +109,22 @@
      owl:hasValue :Tea
    ] .
 
+# 5. The green house is immediately to the right of the ivory house.
+:GreenHouse rdf:type owl:Class ;
+            owl:equivalentClass [
+              rdf:type owl:Restriction ;
+              owl:onProperty :hasColor ;
+              owl:hasValue :Green
+            ] .
+:IvoryHouse rdf:type owl:Class ;
+            owl:equivalentClass [
+              rdf:type owl:Restriction ;
+              owl:onProperty :hasColor ;
+              owl:hasValue :Ivory
+            ] .
+:IvoryHouse :rightOf :GreenHouse .
 
-:GreenHouse rdf:type owl:Restriction ;
-            owl:onProperty :hasColor ;
-            owl:hasValue :Green .
-:IvoryHouse rdf:type owl:Restriction ;
-            owl:onProperty :hasColor ;
-            owl:hasValue :Ivory .
-[] rdf:type owl:Restriction ;
-   owl:onProperty :rightOf ;
-   owl:allValuesFrom :GreenHouse ;
-   owl:onClass :IvoryHouse .
-
+# 6. The Old Gold smoker owns snails.
 [] rdf:type owl:Restriction ;
    owl:onProperty :smokes ;
    owl:someValuesFrom :OldGold ;
@@ -123,6 +134,7 @@
      owl:hasValue :Snails
    ] .
 
+# 7. Kools are smoked in the yellow house.
 [] rdf:type owl:Restriction ;
    owl:onProperty :smokes ;
    owl:someValuesFrom :Kools ;
@@ -132,36 +144,41 @@
      owl:hasValue :Yellow
    ] .
 
+# 8. Milk is drunk in the middle house.
 :House3 :drinks :Milk .
 
+# 9. The Norwegian lives in the first house.
 :House1 :hasNationality :Norwegian .
 
+# 10. The man who smokes Chesterfields lives in the house next to the man with the fox.
 [] rdf:type owl:Restriction ;
    owl:onProperty :smokes ;
    owl:someValuesFrom :Chesterfields ;
    owl:onClass [
      rdf:type owl:Restriction ;
      owl:onProperty :nextTo ;
-     owl:allValuesFrom [
+     owl:someValuesFrom [
        rdf:type owl:Restriction ;
        owl:onProperty :keeps ;
        owl:hasValue :Fox
      ]
    ] .
 
+# 11. Kools are smoked in the house next to the house where the horse is kept.
 [] rdf:type owl:Restriction ;
    owl:onProperty :smokes ;
    owl:someValuesFrom :Kools ;
    owl:onClass [
      rdf:type owl:Restriction ;
      owl:onProperty :nextTo ;
-     owl:allValuesFrom [
+     owl:someValuesFrom [
        rdf:type owl:Restriction ;
        owl:onProperty :keeps ;
        owl:hasValue :Horse
      ]
    ] .
 
+# 12. The Lucky Strike smoker drinks orange juice.
 [] rdf:type owl:Restriction ;
    owl:onProperty :smokes ;
    owl:someValuesFrom :LuckyStrike ;
@@ -171,6 +188,7 @@
      owl:hasValue :OrangeJuice
    ] .
 
+# 13. The Japanese smokes Parliaments.
 [] rdf:type owl:Restriction ;
    owl:onProperty :hasNationality ;
    owl:someValuesFrom :Japanese ;
@@ -180,11 +198,13 @@
      owl:hasValue :Parliaments
    ] .
 
+# 14. The Norwegian lives next to the blue house.
 :House1 :hasNationality :Norwegian .
 [] rdf:type owl:Restriction ;
    owl:onProperty :nextTo ;
-   owl:allValuesFrom [
+   owl:someValuesFrom [
      rdf:type owl:Restriction ;
      owl:onProperty :hasColor ;
      owl:hasValue :Blue
    ] .
+
