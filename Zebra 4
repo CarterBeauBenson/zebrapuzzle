@@ -1,0 +1,190 @@
+@prefix : <http://www.semanticweb.org/ontologies/zebra#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:House rdf:type owl:Class .
+:Nationality rdf:type owl:Class .
+:Color rdf:type owl:Class .
+:Drink rdf:type owl:Class .
+:Cigar rdf:type owl:Class .
+:Pet rdf:type owl:Class .
+
+:hasNationality rdf:type owl:ObjectProperty ;
+                rdfs:domain :House ;
+                rdfs:range :Nationality .
+:hasColor rdf:type owl:ObjectProperty ;
+          rdfs:domain :House ;
+          rdfs:range :Color .
+:drinks rdf:type owl:ObjectProperty ;
+        rdfs:domain :House ;
+        rdfs:range :Drink .
+:smokes rdf:type owl:ObjectProperty ;
+        rdfs:domain :House ;
+        rdfs:range :Cigar .
+:keeps rdf:type owl:ObjectProperty ;
+       rdfs:domain :House ;
+       rdfs:range :Pet .
+
+:House1 rdf:type :House .
+:House2 rdf:type :House .
+:House3 rdf:type :House .
+:House4 rdf:type :House .
+:House5 rdf:type :House .
+
+:Englishman rdf:type :Nationality .
+:Spaniard rdf:type :Nationality .
+:Ukrainian rdf:type :Nationality .
+:Norwegian rdf:type :Nationality .
+:Japanese rdf:type :Nationality .
+
+:Red rdf:type :Color .
+:Green rdf:type :Color .
+:Ivory rdf:type :Color .
+:Yellow rdf:type :Color .
+:Blue rdf:type :Color .
+
+:Tea rdf:type :Drink .
+:Coffee rdf:type :Drink .
+:Milk rdf:type :Drink .
+:OrangeJuice rdf:type :Drink .
+:Water rdf:type :Drink .
+
+:OldGold rdf:type :Cigar .
+:Kools rdf:type :Cigar .
+:Chesterfields rdf:type :Cigar .
+:LuckyStrike rdf:type :Cigar .
+:Parliaments rdf:type :Cigar .
+
+:Dog rdf:type :Pet .
+:Snails rdf:type :Pet .
+:Fox rdf:type :Pet .
+:Horse rdf:type :Pet .
+:Zebra rdf:type :Pet .
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :hasNationality ;
+   owl:someValuesFrom :Englishman ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :hasColor ;
+     owl:hasValue :Red
+   ] .
+
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :hasNationality ;
+   owl:someValuesFrom :Spaniard ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :keeps ;
+     owl:hasValue :Dog
+   ] .
+
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :drinks ;
+   owl:someValuesFrom :Coffee ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :hasColor ;
+     owl:hasValue :Green
+   ] .
+
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :hasNationality ;
+   owl:someValuesFrom :Ukrainian ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :drinks ;
+     owl:hasValue :Tea
+   ] .
+
+
+:GreenHouse rdf:type owl:Restriction ;
+            owl:onProperty :hasColor ;
+            owl:hasValue :Green .
+:IvoryHouse rdf:type owl:Restriction ;
+            owl:onProperty :hasColor ;
+            owl:hasValue :Ivory .
+[] rdf:type owl:Restriction ;
+   owl:onProperty :rightOf ;
+   owl:allValuesFrom :GreenHouse ;
+   owl:onClass :IvoryHouse .
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :smokes ;
+   owl:someValuesFrom :OldGold ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :keeps ;
+     owl:hasValue :Snails
+   ] .
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :smokes ;
+   owl:someValuesFrom :Kools ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :hasColor ;
+     owl:hasValue :Yellow
+   ] .
+
+:House3 :drinks :Milk .
+
+:House1 :hasNationality :Norwegian .
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :smokes ;
+   owl:someValuesFrom :Chesterfields ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :nextTo ;
+     owl:allValuesFrom [
+       rdf:type owl:Restriction ;
+       owl:onProperty :keeps ;
+       owl:hasValue :Fox
+     ]
+   ] .
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :smokes ;
+   owl:someValuesFrom :Kools ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :nextTo ;
+     owl:allValuesFrom [
+       rdf:type owl:Restriction ;
+       owl:onProperty :keeps ;
+       owl:hasValue :Horse
+     ]
+   ] .
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :smokes ;
+   owl:someValuesFrom :LuckyStrike ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :drinks ;
+     owl:hasValue :OrangeJuice
+   ] .
+
+[] rdf:type owl:Restriction ;
+   owl:onProperty :hasNationality ;
+   owl:someValuesFrom :Japanese ;
+   owl:onClass [
+     rdf:type owl:Restriction ;
+     owl:onProperty :smokes ;
+     owl:hasValue :Parliaments
+   ] .
+
+:House1 :hasNationality :Norwegian .
+[] rdf:type owl:Restriction ;
+   owl:onProperty :nextTo ;
+   owl:allValuesFrom [
+     rdf:type owl:Restriction ;
+     owl:onProperty :hasColor ;
+     owl:hasValue :Blue
+   ] .
