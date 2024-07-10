@@ -11,23 +11,23 @@
 :Cigar rdf:type owl:Class .
 :Pet rdf:type owl:Class .
 :hasNationality rdf:type owl:ObjectProperty ;
-                rdfs:domain :Entity ;
+                rdfs:domain :thing ;
                 rdfs:range :Nationality .
 :hasColor rdf:type owl:ObjectProperty ;
-          rdfs:domain :Entity ;
+          rdfs:domain :thing ;
           rdfs:range :Color .
 :drinks rdf:type owl:ObjectProperty ;
-        rdfs:domain :Entity ;
+        rdfs:domain :thing ;
         rdfs:range :Drink .
 :smokes rdf:type owl:ObjectProperty ;
-        rdfs:domain :Entity ;
+        rdfs:domain :thing ;
         rdfs:range :Cigar .
 :keeps rdf:type owl:ObjectProperty ;
-       rdfs:domain :Entity ;
+       rdfs:domain :thing ;
        rdfs:range :Pet .
-:is_next_to rdf:type owl:Property ;
-        rdfs:domain :Entity;
-        rdfs:range :Entity .
+:is_next_to rdf:type owl:ObjectProperty ;
+        rdfs:domain :thing;
+        rdfs:range :thing .
 :House1 rdf:type :House .
 :House2 rdf:type :House .
 :House3 rdf:type :House .
