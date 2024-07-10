@@ -25,6 +25,9 @@
 :keeps rdf:type owl:ObjectProperty ;
        rdfs:domain :Entity ;
        rdfs:range :Pet .
+:is_next_to rdf:type owl:Property ;
+        rdfs:domain :Entity;
+        rdfs:range :Entity .
 :House1 rdf:type :House .
 :House2 rdf:type :House .
 :House3 rdf:type :House .
@@ -55,42 +58,27 @@
 :Fox rdf:type :Pet .
 :Horse rdf:type :Pet .
 :Zebra rdf:type :Pet .
+
 :House1 :hasNationality :Norwegian .
-:House2 :hasColor :Blue .
-:House3 :drinks :Milk .
+
+:Chesterfields :is_next_to :Fox .
+
 :House1 :hasColor :Yellow .
-:House1 :smokes :Kools .
-:House2 :keeps :Fox .
-:House2 :smokes :Chesterfields .
-:House3 :hasNationality :Ukrainian .
-:House3 :drinks :Tea .
-:House4 :drinks :OrangeJuice .
-:House4 :hasNationality :Japanese .
-:House4 :smokes :Parliaments .
-:House5 :keeps :Zebra .
-:House1 :keeps :Fox .
-:House2 :drinks :Water .
-:House3 :smokes :OldGold .
-:House4 :hasColor :Green .
-:House5 :hasColor :Ivory .
-:House5 :keeps :Dog .
-:House1 :hasColor :Yellow .
-:House2 :hasColor :Blue .
-:House3 :hasColor :Red .
-:House4 :hasColor :Green .
-:House5 :hasColor :Ivory .
-:House1 :keeps :Horse .
-:House2 :keeps :Fox .
-:House3 :keeps :Snails .
-:House4 :keeps :Zebra .
-:House5 :keeps :Dog .
-:House1 :drinks :Water .
-:House2 :drinks :Tea .
+
+:Kools :is_next_to :Horse .
+
 :House3 :drinks :Milk .
-:House4 :drinks :OrangeJuice .
-:House5 :drinks :Coffee .
-:House1 :smokes :Kools .
-:House2 :smokes :Chesterfields .
-:House3 :smokes :OldGold .
-:House4 :smokes :LuckyStrike .
-:House5 :smokes :Parliaments .
+
+:Ukrainian :drinks :Tea .
+
+:Japanese :is_next_to :OrangeJuice .
+
+:Green :is_right_of :Ivory .
+
+:OldGold :keeps :Snails .
+
+:Water :is_next_to :Fox .
+
+:LuckyStrike :drinks :OrangeJuice .
+
+:House2 :is_next_to :Blue .
