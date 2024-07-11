@@ -59,25 +59,7 @@
 :Horse rdf:type :Pet .
 :Zebra rdf:type :Pet .
 
-:House1 :hasNationality :Norwegian .
 
-:Chesterfields :is_next_to :Fox .
-
-:House1 :hasColor :Yellow .
-
-:Kools :is_next_to :Horse .
-
-:House3 :drinks :Milk .
-
-:Ukrainian :drinks :Tea .
-
-:Japanese :is_next_to :OrangeJuice .
-
-:Green :is_right_of :Ivory .
-
-:OldGold :keeps :Snails .
-
-:Water :is_next_to :Fox .
 
 :LuckyStrike :drinks :OrangeJuice .
 
